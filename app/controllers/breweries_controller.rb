@@ -26,9 +26,16 @@ class BreweriesController < ApplicationController
     end
 
     def update
+        if @brewery.update(brewery_params)
+            redirect_to @brewery
+        else
+            render :edit
+        end
     end
 
     def destroy
+        @brewery.destroy
+        redirect_to breweries_url
     end
 
     private
