@@ -4,7 +4,7 @@ class CreateBeers < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :style
       t.float :abv
-      t.integer :brewery_id
+      t.belongs_to :brewery, null: false, foreign_key: true
 
       t.timestamps
     end
