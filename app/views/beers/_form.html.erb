@@ -1,17 +1,17 @@
-<%= form_for brewery do |f| %>
+<%= form_for beer do |f| %>
     <div class="field">
         <%= f.label :name %>
         <%= f.text_field :name %>
     </div>
 
     <div class="field">
-        <%= f.label :location %>
-        <%= f.text_field :location %>
+        <%= f.label :style %>
+        <%= f.text_field :style %>
     </div>
 
     <div class="field">
-        <%= f.label :website %>
-        <%= f.text_field :website %>
+        <%= f.label :abv %>
+        <%= f.number_field :abv, step: 0.1 %>
     </div>
 
     <div class="action">
