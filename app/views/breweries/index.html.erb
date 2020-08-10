@@ -5,3 +5,5 @@
         <li><%= link_to b.name, brewery_path(b) %></li>
     <% end %>
 </ul>
+
+<%= button_to "New Brewery", new_brewery_path, method: "get" %>

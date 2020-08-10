@@ -1,7 +1,5 @@
-<h1>Beers</h1>
-
 <ul>
-    <% @beers.each do |b| %>
+    <% beers.each do |b| %>
         <li><%= link_to b.name, brewery_beer_path(b.brewery, b) %></li>
     <% end %>
 </ul>

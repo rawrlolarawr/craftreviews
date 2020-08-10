@@ -1,3 +1,7 @@
 <h1>Brewery Profile</h1>
 
 <%= render partial: "brewery_info", locals: {brewery: @brewery } %>
+
+<%= render partial: "beers/beer_list", locals: { beers: @brewery.beers } %>
+
+<%= button_to "Add Beer", new_brewery_beer_path(@brewery), method: "get" %>

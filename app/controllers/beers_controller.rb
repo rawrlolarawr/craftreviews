@@ -6,14 +6,16 @@ class BeersController < ApplicationController
     end
     
     def new
-        @beer = Beer.new
+        set_brewery!
+        @beer = @brewery.beers.build
     end
 
     def create
-        @beer = Beer.new(beer_params)
+        raise params
+        @beer = @brewery.beers.build(beer_params)
 
         if @beer.save
-            redirect_to @beer
+            redirect_to brewery_beer_path(@beer.brewery, @beer)
         else
             render :new
         end
@@ -27,7 +29,7 @@ class BeersController < ApplicationController
 
     def update
         if @beer.update(beer_params)
-            redirect_to @beer
+            redirect_to brewery_beer_path(@beer.brewery, @beer)
         else
             render :edit
         end
@@ -35,7 +37,7 @@ class BeersController < ApplicationController
 
     def destroy
         @beer.destroy
-        redirect_to beers_url
+        redirect_to brewery_beers_url
     end
 
     private
@@ -46,5 +48,9 @@ class BeersController < ApplicationController
 
     def set_beer!
         @beer = Beer.find_by(id: params[:id])
+    end
+
+    def set_brewery!
+        @brewery = Brewery.find_by(params[:brewery_id])
     end
 end
