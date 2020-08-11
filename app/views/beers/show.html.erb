@@ -1,5 +1,7 @@
 <h1>Beer Profile</h1>
 
-<%= render partial: "beer_info", locals: {beer: @beer } %>
+<%= render partial: "beer_info", locals: { beer: @beer } %>
+
+<%= button_to "Add Review", new_beer_review_path(@beer), method: "get" %>
 
 <%= button_to "Destroy", brewery_beer_path, method: "delete" %>

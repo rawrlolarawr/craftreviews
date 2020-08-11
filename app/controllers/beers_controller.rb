@@ -11,6 +11,7 @@ class BeersController < ApplicationController
     end
 
     def create
+        raise params
         @beer = @brewery.beers.build(beer_params)
 
         if @beer.save
