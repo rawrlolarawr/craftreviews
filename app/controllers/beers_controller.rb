@@ -1,21 +1,20 @@
 class BeersController < ApplicationController
     before_action :set_beer!, only: [:show, :edit, :update, :destroy]
-
+    before_action :set_brewery!, only: [:new, :create, :edit]
+    
     def index
         @beers = Beer.all
     end
     
     def new
-        set_brewery!
         @beer = @brewery.beers.build
     end
 
     def create
-        raise params
         @beer = @brewery.beers.build(beer_params)
 
         if @beer.save
-            redirect_to brewery_beer_path(@beer.brewery, @beer)
+            redirect_to brewery_beer_path(@brewery, @beer)
         else
             render :new
         end
@@ -51,6 +50,6 @@ class BeersController < ApplicationController
     end
 
     def set_brewery!
-        @brewery = Brewery.find_by(params[:brewery_id])
+        @brewery = Brewery.find_by(id: params[:brewery_id])
     end
 end
