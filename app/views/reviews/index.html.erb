@@ -3,7 +3,7 @@
 <div>
     <ul>
         <% @reviews.each do |r| %>
-            <li><% render partial: "review_info", locals: [review: r] %></li>
+            <li><%= render partial: "review_info", locals: { review: r } %></li>
         <% end %>
     <ul>
 </div>

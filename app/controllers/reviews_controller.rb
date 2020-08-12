@@ -1,9 +1,9 @@
 class ReviewsController < ApplicationController
     before_action :set_review!, only: [:show, :edit, :update, :destroy]
-    before_action :set_beer!, only: [:new, :create, :edit]
+    before_action :set_beer!, only: [:index, :new, :create, :edit]
     
     def index
-        @reviews = Review.all
+        @reviews = @beer.reviews
     end
 
     def new

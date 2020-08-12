@@ -1,9 +1,9 @@
 class BeersController < ApplicationController
     before_action :set_beer!, only: [:show, :edit, :update, :destroy]
-    before_action :set_brewery!, only: [:new, :create, :edit]
+    before_action :set_brewery!, only: [:index, :new, :create, :edit]
     
     def index
-        @beers = Beer.all
+        @beers = @brewery.beers
     end
     
     def new
@@ -11,7 +11,6 @@ class BeersController < ApplicationController
     end
 
     def create
-        raise params
         @beer = @brewery.beers.build(beer_params)
 
         if @beer.save
