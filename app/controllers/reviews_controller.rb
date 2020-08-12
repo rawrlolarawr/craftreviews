@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
     before_action :set_review!, only: [:show, :edit, :update, :destroy]
-    before_action :set_beer!, only: [:new, :create]
+    before_action :set_beer!, only: [:new, :create, :edit]
     
     def index
         @reviews = Review.all
@@ -8,7 +8,6 @@ class ReviewsController < ApplicationController
 
     def new
         @review = @beer.reviews.build
-        @user = current_user
     end
 
     def create
@@ -28,7 +27,7 @@ class ReviewsController < ApplicationController
     end
 
     def update
-        if @review.update(review_params) && review_owner?(@review.owner)
+        if @review.update(review_params) && review_owner?(@review.user.id)
             redirect_to beer_review_path(@review.beer, @review)
         else
             render :edit
