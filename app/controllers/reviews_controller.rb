@@ -28,9 +28,16 @@ class ReviewsController < ApplicationController
     end
 
     def update
+        if @review.update(review_params) && review_owner?(@review.owner)
+            redirect_to beer_review_path(@review.beer, @review)
+        else
+            render :edit
+        end
     end
 
     def destroy
+        @review.destroy
+        redirect_to beer_reviews_url
     end
 
     private
@@ -45,5 +52,9 @@ class ReviewsController < ApplicationController
 
     def set_beer!
         @beer = Beer.find_by(id: params[:beer_id])
+    end
+
+    def review_owner?(user_id)
+        user_id == current_user.id
     end
 end

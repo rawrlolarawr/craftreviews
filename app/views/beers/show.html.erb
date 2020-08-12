@@ -2,6 +2,8 @@
 
 <%= render partial: "beer_info", locals: { beer: @beer } %>
 
+<%= render partial: "reviews/review_list", locals: { beer: @beer } %>
+
 <%= button_to "Add Review", new_beer_review_path(@beer), method: "get" %>
 
 <%= button_to "Destroy", brewery_beer_path, method: "delete" %>
