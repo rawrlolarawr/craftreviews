@@ -28,7 +28,7 @@ gem 'devise'
 # OAuth
 gem 'omniauth'
 gem 'omniauth-facebook'
-gem 'omniauth-google'
+gem 'omniauth-google-oauth2'
 # dotENV
 gem 'dotenv-rails'
 
