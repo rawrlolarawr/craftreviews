@@ -14,8 +14,10 @@ class BeersController < ApplicationController
         @beer = @brewery.beers.build(beer_params)
 
         if @beer.save
+            flash[:success] = "Beer Created"
             redirect_to brewery_beer_path(@brewery, @beer)
         else
+            flash[:error] = @beer.errors.full_messages
             render :new
         end
     end
@@ -28,8 +30,10 @@ class BeersController < ApplicationController
 
     def update
         if @beer.update(beer_params)
+            flash[:success] = "Beer Updated"
             redirect_to brewery_beer_path(@beer.brewery, @beer)
         else
+            flash[:error] = @beer.errors.full_messages
             render :edit
         end
     end

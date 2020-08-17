@@ -9,8 +9,10 @@ class UsersController < ApplicationController
 
     def update
         if @user.update(user_params)
+            flash[:success] = "User Updated"
             redirect_to @user
         else
+            flash[:error] = @user.errors.full_messages
             render 'edit'
         end
     end

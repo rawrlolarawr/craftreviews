@@ -14,8 +14,10 @@ class ReviewsController < ApplicationController
         @review = @beer.reviews.build(review_params)
 
         if @review.save
+            flash[:success] = "Review Created"
             redirect_to beer_review_path(@beer, @review)
         else
+            flash[:error] = @review.errors.full_messages
             render :new
         end
     end
@@ -28,8 +30,10 @@ class ReviewsController < ApplicationController
 
     def update
         if @review.update(review_params) && review_owner?(@review.user.id)
+            flash[:success] = "Review Updated"
             redirect_to beer_review_path(@review.beer, @review)
         else
+            flash[:error] = @review.errors.full_messages
             render :edit
         end
     end
