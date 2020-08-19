@@ -6,4 +6,8 @@ class WelcomeController < ApplicationController
         @beers
         @reviews
     end
+
+    def results
+
+    end
 end
