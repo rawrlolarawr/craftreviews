@@ -1,0 +1,5 @@
+<ul>
+    <% breweries.each do |b| %>
+        <li><%= link_to b.name, brewery_path(b) %></li>
+    <% end %>
+</ul>
