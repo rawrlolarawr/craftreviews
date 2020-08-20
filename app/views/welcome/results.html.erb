@@ -1,0 +1,38 @@
+<% unless @brewery_results.empty? %>
+    <div class="cards">
+        <h3>Breweries</h3>
+        <ul>
+            <% @brewery_results.each do |b| %>
+                <div class="card">
+                    <li><%= link_to b.name, brewery_path(b) %></li>
+                </div>
+            <% end %>
+        </ul>
+    </div>
+<% end %>
+
+<% unless @beer_results.empty? %>
+    <div class="cards">
+        <h3>Beers</h3>
+        <ul>
+            <% @beer_results.each do |b| %>
+                <div class="card">
+                    <li><%= link_to b.name, brewery_beer_path(b.brewery, b) %></li>
+                </div>
+            <% end %>
+        </ul>
+    </div>
+<% end %>
+
+<% unless @review_results.empty? %>
+    <div class="cards">
+        <h3>Reviews</h3>
+        <ul>
+            <% @review_results.each do |r| %>
+                <div class="card">
+                    <li><%= link_to r.name, beer_review_path(r.beer, r) %></li>
+                </div>
+            <% end %>
+        </ul>
+    </div>
+<% end %>

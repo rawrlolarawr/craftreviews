@@ -11,5 +11,7 @@ Rails.application.routes.draw do
     resources :reviews
   end
 
+  post '/results', to: 'welcome#results'
+
   root to: "welcome#index"
 end
