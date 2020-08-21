@@ -1,19 +1,21 @@
-<%= form_for [beer, review] do |f| %>
-    <div class="field">    
-        <%= f.hidden_field :user_id, value: current_user.id %>
-    </div>
+<div class="card">
+    <%= form_for [beer, review] do |f| %>
+        <div class="field">    
+            <%= f.hidden_field :user_id, value: current_user.id %>
+        </div>
 
-    <div class="field">
-        <%= f.label :name, value: "title" %>
-        <%= f.text_field :name %>
-    </div>
-    
-    <div class="field">
-        <%= f.label :content %>
-        <%= f.text_field :content %>
-    </div>
+        <div class="field">
+            <%= f.label :name, value: "title" %>
+            <%= f.text_field :name %>
+        </div>
+        
+        <div class="field">
+            <%= f.label :content %>
+            <%= f.text_field :content %>
+        </div>
 
-    <div class="action">
-        <%= f.submit %>
-    </div>
-<% end %>
+        <div class="action">
+            <%= f.submit %>
+        </div>
+    <% end %>
+</div>

@@ -1,5 +1,5 @@
-<ul>
+<ul class="cards">
     <% beers.each do |b| %>
-        <li><%= link_to b.name, brewery_beer_path(b.brewery, b) %></li>
+        <li class="card"><%= link_to b.name, brewery_beer_path(b.brewery, b) %></li>
     <% end %>
 </ul>

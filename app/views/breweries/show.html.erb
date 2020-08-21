@@ -5,3 +5,4 @@
 <%= render partial: "beers/beer_list", locals: { beers: @brewery.beers } %>
 
 <%= button_to "Add Beer", new_brewery_beer_path(@brewery), method: "get" %>
+<%= button_to "Edit Brewery", edit_brewery_path(@brewery), method: "get" %>

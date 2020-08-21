@@ -1,9 +1,9 @@
 <h1>Reviews</h1>
 
 <div>
-    <ul>
+    <ul class="cards">
         <% @reviews.each do |r| %>
-            <li><%= render partial: "review_info", locals: { review: r } %></li>
+            <li class="card"><%= render partial: "review_info", locals: { review: r } %></li>
         <% end %>
     <ul>
 </div>
