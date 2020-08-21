@@ -2,4 +2,6 @@
 
 <%= render partial: "review_info", locals: { review: @review } %>
 
-<%= button_to "Destroy", beer_review_path, method: "delete" %>
+<% if review_owner?(@review) %>
+    <%= button_to "Destroy", beer_review_path, method: "delete" %>
+<% end %>
