@@ -13,10 +13,10 @@ class BreweriesController < ApplicationController
         @brewery = Brewery.new(brewery_params)
 
         if @brewery.save
-            flash[:success] = "Brewery Created"
+            set_flash(:success, "Brewery Created")
             redirect_to @brewery
         else
-            flash[:error] = @brewery.errors.full_messages
+            flash_error(@brewery)
             render :new
         end
     end
@@ -29,10 +29,10 @@ class BreweriesController < ApplicationController
 
     def update
         if @brewery.update(brewery_params)
-            flash[:success] = "Brewery Updated"
+            set_flash(:success, "Brewery Updated")
             redirect_to @brewery
         else
-            flash[:error] = @brewery.errors.full_messages
+            flash_error(@brewery)
             render :edit
         end
     end

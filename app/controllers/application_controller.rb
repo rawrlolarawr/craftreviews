@@ -8,6 +8,14 @@ class ApplicationController < ActionController::Base
     @beers = Beer.all
     @reviews = Review.all
   end
+
+  def set_flash(type, message)
+    flash[type] = message
+  end
+
+  def flash_error(model)
+    flash[:error] = model.errors.full_messages
+  end
   
   protected
 
