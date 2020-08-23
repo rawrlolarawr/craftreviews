@@ -1,24 +1,21 @@
-# README
+# Craft Reviews
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This web app uses Ruby on Rails as a dynamic review database for craft breweries
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+Install using a combination of Apache Server & Passenger Gem, Nginx Server and Unicorn Gem, or deploy to a Heroku server
 
-* System dependencies
+https://www.phusionpassenger.com/library/walkthroughs/deploy/ruby/ownserver/standalone/oss/deploy_app_main.html
 
-* Configuration
+## Usage
 
-* Database creation
+Log in or Register to add breweries, beers, and reviews
 
-* Database initialization
+## Contributing
 
-* How to run the test suite
+Bug reports and pull requests are welcome on GitHub at https://github.com/christopherc0825/Teddy-Bear-Repair.
 
-* Services (job queues, cache servers, search engines, etc.)
+## License
 
-* Deployment instructions
-
-* ...
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
