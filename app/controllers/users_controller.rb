@@ -4,19 +4,6 @@ class UsersController < ApplicationController
     def show
     end
 
-    def edit
-    end
-
-    def update
-        if @user.update(user_params)
-            set_flash(:success, "User Updated")
-            redirect_to @user
-        else
-            flash_error(@user)
-            render 'edit'
-        end
-    end
-
     private
 
     def set_user!
