@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
     before_action :set_beer!, only: [:index, :new, :create, :edit]
     
     def index
-        @reviews = @beer.reviews
+        @reviews = Review.all
     end
 
     def new

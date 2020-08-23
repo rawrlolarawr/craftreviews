@@ -3,5 +3,8 @@
 <%= render partial: "review_info", locals: { review: @review } %>
 
 <% if review_owner?(@review) %>
-    <%= button_to "Destroy", beer_review_path, method: "delete" %>
+    <div class="button_pane">
+        <%= button_to "Edit", edit_beer_review_path, method: "get" %>
+        <%= button_to "Destroy", beer_review_path, method: "delete" %>
+    </div>
 <% end %>

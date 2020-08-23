@@ -1,5 +1,5 @@
 <ul class="cards">
     <% @beer.reviews.each do |r| %>
-        <li class="card"><%= render partial: "reviews/review_info", locals: { review: r } %></li>
+        <li class="card"><%= link_to "#{r.name} - #{r.user.username}", beer_review_path(r) %></li>
     <% end %>
 </ul>

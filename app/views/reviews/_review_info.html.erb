@@ -1,5 +1,5 @@
 <div class="card">
     <h3><%= review.name %></h3>
     <p><%= review.content %></p>
-    <p><small><%= review.user.username %></small></p>
+    <p><small><%= link_to username(review), review.user %></small></p>
 </div>

@@ -4,6 +4,7 @@
 
 <%= render partial: "reviews/review_list", locals: { beer: @beer } %>
 
-<%= button_to "Add Review", new_beer_review_path(@beer), method: "get" %>
-
-<%= button_to "Edit Beer", edit_brewery_beer_path, method: "get" %>
+<div class="button_pane">
+    <%= button_to "Add Review", new_beer_review_path(@beer), method: "get" %>
+    <%= button_to "Edit Beer", edit_brewery_beer_path, method: "get" %>
+</div>

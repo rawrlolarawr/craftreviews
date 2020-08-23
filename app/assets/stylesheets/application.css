@@ -13,5 +13,6 @@
  *= require_self
  *= require layout
  *= require nav
- *= require main
+ *= require cards
+ *= require button_pane
  */

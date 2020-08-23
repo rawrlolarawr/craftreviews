@@ -1,5 +1,5 @@
 <ul class="cards">
     <% reviews.each do |r| %>
-        <li class="card"><%= link_to r.name, beer_review_path(r.beer, r) %></li>
+        <li class="card"><%= link_to "#{r.name} - #{r.user.username}", beer_review_path(r.beer, r) %></li>
     <% end %>
 </ul>

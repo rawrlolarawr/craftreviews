@@ -1,9 +1,3 @@
 <h1>Reviews</h1>
 
-<div>
-    <ul class="cards">
-        <% @reviews.each do |r| %>
-            <li class="card"><%= render partial: "review_info", locals: { review: r } %></li>
-        <% end %>
-    <ul>
-</div>
+<%= render partial: "all_reviews_list", locals: { reviews: @reviews } %>

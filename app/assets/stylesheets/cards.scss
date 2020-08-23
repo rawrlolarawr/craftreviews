@@ -1,0 +1,23 @@
+.cards {
+    display: flex;
+    width: 25%;
+    padding: 0 10px;
+}
+
+.card {
+    margin: 0.5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: #eee;
+    list-style: none;
+}
+
+.card a {
+    display: block;
+}
+
+.card:hover {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.5);
+}
+
