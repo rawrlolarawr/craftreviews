@@ -42,7 +42,7 @@ class ReviewsController < ApplicationController
         if review_owner?(@review.user.id)
             @review.destroy
             redirect_to beer_reviews_url
-        
+        end
     end
 
     private
