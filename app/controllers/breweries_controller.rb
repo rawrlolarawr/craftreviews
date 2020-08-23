@@ -2,7 +2,7 @@ class BreweriesController < ApplicationController
     before_action :set_brewery!, only: [:show, :edit, :update, :destroy]
     
     def index
-        @breweries = Brewery.all
+        @breweries
     end
     
     def new

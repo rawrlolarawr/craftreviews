@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
     before_action :set_beer!, only: [:index, :new, :create, :edit]
     
     def index
-        @reviews = Review.all
+        @reviews = @beer.reviews
     end
 
     def new
@@ -42,7 +42,7 @@ class ReviewsController < ApplicationController
         if review_owner?(@review.user.id)
             @review.destroy
             redirect_to beer_reviews_url
-        end
+        
     end
 
     private
